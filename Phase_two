@@ -1,0 +1,65 @@
+Phone number ownership and active SIM card.
+
+Verification proves:
+├─ User has access to stated phone number
+├─ Phone number is active and receiving SMS
+├─ User is willing to provide contact info (high commitment signal)
+├─ Account can be 2FA protected (security feature)
+└─ User is harder to fake (SMS = real SIM)
+
+Does NOT prove:
+├─ ✗ Phone number is in their real name
+├─ ✗ Number hasn't been used for other accounts
+├─ ✗ It's not a burner phone
+├─ ✗ Anything about user identity
+└─ ✗ Anything about user trustworthiness
+How is it Verified?
+VeriDate sends SMS code to phone number:
+
+1. User clicks "Verify Phone" 
+2. User enters phone number + country code
+3. VeriDate validates format (E.164 format)
+4. Twilio sends 6-digit SMS code
+5. User enters code in UI
+6. Code verified in real-time (10 minute TTL - shorter than email)
+7. Webhook sent to dating app
+8. Dating app stores: phone_verified = true
+9. Badge appears on profile immediately
+
+Technical:
+├─ SMS delivery: Twilio (99.7% delivery in 30 seconds)
+├─ Code generation: 6 digits (random, not sequential)
+├─ TTL: 10 minutes (higher friction than email, stronger signal)
+├─ Rate limiting: Max 3 attempts per number per hour
+├─ Cost to VeriDate: \$0.03-0.05 per SMS (Twilio rates)
+└─ Retry logic: Exponential backoff (1, 2, 4 minutes)
+Why Would Users Want Phone Verified Badge?
+User benefits (vs. email):
+
+├─ STRONGER SIGNAL: "I'm serious (gave phone number)"
+├─ PREMIUM ACCESS: Unlock verified-only matching
+├─ TRUST SCORE: Moves from 33% to 66% trust (visible on profile)
+├─ MATCH QUALITY: Only matched with other verified users (if enabled)
+├─ SAFETY: Can contact matches via phone if needed
+├─ 2FA SECURITY: Protects account from takeover
+└─ SOCIAL PROOF: "47% of app have this, join them"
+User benefits (vs. email):
+
+├─ STRONGER SIGNAL: "I'm serious (gave phone number)"
+├─ PREMIUM ACCESS: Unlock verified-only matching
+├─ TRUST SCORE: Moves from 33% to 66% trust (visible on profile)
+├─ MATCH QUALITY: Only matched with other verified users (if enabled)
+├─ SAFETY: Can contact matches via phone if needed
+├─ 2FA SECURITY: Protects account from takeover
+└─ SOCIAL PROOF: "47% of app have this, join them"
+
+Psychology:
+├─ "Giving phone = Real commitment"
+├─ "SMS verification = Harder to fake than email"
+├─ "Match quality boost = Better dates"
+└─ Sunken cost fallacy = "I've verified email AND phone, not stopping now"
+Psychology:
+├─ "Giving phone = Real commitment"
+├─ "SMS verification = Harder to fake than email"
+├─ "Match quality boost = Better dates"
+└─ Sunken cost fallacy = "I've verified email AND phone, not stopping now"
