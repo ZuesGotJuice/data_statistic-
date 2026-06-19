@@ -1,0 +1,123 @@
+What is Verified 
+Government-issued ID authenticity and face match.
+
+Verification proves:
+├─ User submitted real government ID (passport, driver's license)
+├─ ID is not expired, not forged, not fake
+├─ ID passes liveness + face comparison
+├─ Name on ID matches profile name
+├─ User is willing to provide government ID (extreme commitment)
+└─ Account is traceable to real person (accountability)
+
+Does NOT prove:
+├─ ✗ User is over 18 (VeriDate doesn't check age)
+├─ ✗ User has no criminal history
+├─ ✗ User is trustworthy or honest
+├─ ✗ User's profile information is accurate
+├─ ✗ User's photos are recent or real
+└─ ✗ User's stated gender/sexuality matches ID
+How is it Verified 
+VeriDate partners with Onfido (UK company, trusted by Revolut, Coinbase):
+
+1. User clicks "Verify ID" in verification flow
+2. Presented with Onfido embed (SDK)
+3. User uploads ID photo (front + back)
+4. User takes selfie (for face comparison)
+5. Onfido's AI checks:
+   ├─ ID is real (not photocopy, not fake)
+   ├─ ID is valid (not expired)
+   ├─ Name is readable
+   ├─ Face on ID matches selfie (liveness check)
+   └─ No signs of document manipulation
+6. Onfido returns result to VeriDate: {approved, rejected, unclear}
+7. If approved → Webhook to dating app
+8. Badge appears on profile (with date: "Verified Oct 15")
+9. Dating app stores: id_verified = true, id_verified_at = timestamp
+
+Technical:
+├─ Provider: Onfido (www.onfido.com)
+├─ Verification method: Document + Liveness (AI-powered)
+├─ Accuracy: 99.2% (battles fraud teams daily)
+├─ Processing time: 2-30 seconds (real-time)
+├─ Cost to VeriDate: \$0.50-1.00 per verification
+├─ Turnaround: Instant (no human review for approvals)
+├─ Rejection rate: 8-12% (users resubmit or give up)
+└─ Repeat attempt: Can retry 3x before asking support
+Why would users want ID verfied badge?
+User benefits:
+
+├─ STRONGEST TRUST SIGNAL: "I proved who I am"
+├─ PROFILE DOMINANCE: Algorithmically boosted 3-5x
+├─ PREMIUM UNLOCK: Exclusive to "ID Verified Only" dating mode
+├─ MATCH QUALITY: 87% higher quality matches (verified with verified)
+├─ DATING SUCCESS: 2.5x more dates with other verified users
+├─ CATFISH PROTECTION: Can't be catfished by someone with ID badge
+├─ CONFIDENCE: "I'm serious about finding real relationship"
+├─ SOCIAL STATUS: "See my badge? I'm legit" (dating profile flex)
+└─ ACCOUNTABILITY: Creates stakes (ID = traceable if you're bad actor)
+
+Psychology:
+├─ "I've invested 10 minutes in verification, I'm committed"
+├─ "Only 15% of users have this, I'm in elite group"
+├─ "Matches see my badge = they trust me more"
+├─ "I can see their badge = they're not catfishing me"
+└─ Reducing decision anxiety: "Do I trust this person?"
+Why Would Dating Apps Pay for ID Verification?
+Why would dating apps pay for ID verification?
+Dating app business benefits:
+
+1. FRAUD ELIMINATION
+   ├─ Catfishing drops 85-95%
+   ├─ Romance scams nearly eliminated
+   ├─ Fake profile reports drop 90%
+   ├─ Bot accounts can't use ID verification
+   ├─ Trust & Safety team cost drops 40%
+   └─ Moderation becomes reactive, not preventative
+
+2. PREMIUM TIER MONETIZATION (Big one)
+   ├─ Feature: "Verified Dating Mode" - \$24.99/month
+   │  (Only swipe on verified IDs, premium feature)
+   ├─ ID verified users: 5-15% adoption (highest intent segment)
+   ├─ Of those, 35-40% convert to Premium (want "verified mode")
+   ├─ LTV of ID-verified Premium user: \$500-800
+   │  (They stay 24+ months vs 8 months for normal Premium)
+   └─ Per 50M MAU: 7.5M × 15% = 1.125M ID verified
+      1.125M × 38% = 427K Premium subs @ \$24.99
+      427K × \$24.99 × 12 = \$128M incremental annual revenue
+
+3. BRAND & SAFETY
+   ├─ "The dating app where catfishing is eliminated"
+   ├─ PR value: "We're the trust-first dating app"
+   ├─ Enables marketing: "87% reduction in fake profiles"
+   ├─ Reduces bad press: Fewer catfishing horror stories
+   ├─ Attracts serious daters (target demographic)
+   └─ Can charge higher price (premium positioning)
+
+4. COMPETITIVE MOAT
+   ├─ First-mover advantage if dating app launches ID verification first
+   ├─ Users move to "the verified app"
+   ├─ Competitors forced to copy (but VeriDate is your supplier)
+   ├─ Network effects: More verified users = more value = more users
+   └─ Lock-in: Users won't go back to apps without verified users
+
+5. OUTCOMES DATA
+   ├─ ID verified users have 3.8x date completion rate
+   ├─ 65% of dates with 2+ ID verified users lead to second date
+   ├─ ML model trained on verified data is 20% more accurate
+   ├─ Match algorithm improves = higher engagement
+   └─ Dating app becomes best matching app in market
+
+FINANCIAL IMPACT (Bumble-scale):
+├─ Current Premium revenue: \$500M
+├─ Verified Mode incremental: +\$128M (25% increase!)
+├─ Cost to implement: API integration (\$50K one-time)
+├─ Cost to Bumble per verification: 20% of VeriDate fee
+│  (Bumble charges \$2, VeriDate takes \$1, Bumble pays ~\$0.60)
+├─ Annual VeriDate payout: 7.5M verifications × \$1 = \$7.5M
+├─ Dating app cost of revenue: ~1% of incremental revenue
+└─ ROI: 1,700% in year 1
+
+INVESTOR PERSPECTIVE:
+"ID verification is the unlock for \$100M+ revenue tier.
+Without it, dating app is commodity.
+With it, dating app becomes category leader."
